@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="CSS/estilos.css">
+</head>
+
+<body>
+	<fieldset>
+		<legend>Datos aspirante</legend>
+		<form id="fomulario">
+			<fieldset>
+				<legend>Datos Personales</legend>
+					<input type="number" name="Cedula" placeholder="Cedula Identidad">
+					<input type="text" name="Nombre" placeholder="Nombre">
+					<input type="text" name="Apellido" placeholder="Apellido">
+					<label>Fecha de Nacimiento
+						<input type="date" name="Fecha_Nacimiento">
+					</label>
+					<label>Genero</label>
+					<select name="Genero">
+						<option value="f">femenino</option>
+						<option value="m">masculino</option>
+					</select>
+			</fieldset>
+			<fieldset>
+				<legend>Documento Consignados</legend>
+					<label>Copia cedula identidad</label>
+					<input type="checkbox" name="Copia_Cedula" checked>
+					<label>Copia partida nacimiento</label>
+					<input type="checkbox" name="Partida_Nacimiento" checked>
+					<label>Copia titulo bachiller</label>
+					<input type="checkbox" name="Titulo_Bachiller" checked>
+					<label>Copia certificacion calificaciones</label>
+					<input type="checkbox" name="Certificado_Notas" checked>
+					<label>Copia OPSU</label>
+					<input type="checkbox" name="OPSU" checked>
+					<label>Copia fondo negro</label>
+					<input type="checkbox" name="Fondo_Negro" checked>
+			</fieldset>
+		</form>
+		<button onclick="crearRenglonVista1(recolectarDatos('Array' ,'fomulario'));enviarPeticion('PrimerController', recolectarDatos('JSON', 'fomulario'));">Registrar aspirante</button>
+	</fieldset>
+	<fieldset>
+		<legend>Listado aspirante ingresado</legend>
+		<table id="tabla">
+				<tr>
+					<td>CI</td>
+					<td>Nombre_Completo</td>
+					<td>Fecha_de_nacimiento</td>
+					<td>CI</td>
+					<td>Part_nac</td>
+					<td>titulo</td>
+					<td>Cert_Calif</td>
+					<td>OPSU</td>
+					<td>Fondo_Negro</td>
+				</tr>
+			</table>
+	</fieldset>
+	<!-- <a href="index_2.html">
+		<button style="margin-left:550px;">Regitrar Aspirante</button>
+	</a> -->
+	<script src="JS/ajax.js"></script>
+</body>
+</html>
